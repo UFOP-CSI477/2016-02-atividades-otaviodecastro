@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <title>Validação cadastro JavaScript</title>
+    <script>
+      function validar(){
+        if(document.cadastro.nome.length == 0){
+          window.alert("Nome não preenchido.");
+          return;
+        }
+        if(document.cadastro.datanasc.value == ""){
+          window.alert("Data de nascimento não preenchida.");
+          document.cadastro.datan.focus();
+          return;
+        }
+        if(document.cadastro.sexo.value == ""){
+          window.alert("Sexo não preenchido.");
+          document.sexo.nome.focus();
+          return;
+        }
+        if(document.cadastro.curso.value == ""){
+          window.alert("Curso não preenchido.");
+          document.cadastro.curso.focus();
+          return;
+        }
+        if(document.cadastro.matricula.value == ""){
+          window.alert("Matrícula não preenchida.");
+          document.cadastro.matricula.focus();
+          return;
+        }
+        if(document.cadastro.senha.value == ""){
+          window.alert("Senha não preenchida.");
+          document.cadastro.senha.focus();
+          return;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Cadastro</h1>
+    <form name="cadastro" action="cadastroPHP.php" method="POST" class="form-horizontal">
+        <label for="nome" class="control-label col-sm-2">Nome:</label>
+        <input type="text" class="form-control" name="nome">
+        <br>
+        <label for="sexo" class="control-label col-sm-2">Sexo:</label>
+        <input type="text" class="form-control" name="sexo">
+        <br>
+        <label for="datan" class="control-label col-sm-2">Data de nascimento:</label>
+        <input type="Date" class="form-control" name="datan">
+        <br>
+        <label for="curso" class="control-label col-sm-2">Curso:</label>
+        <input type="text" class="form-control" name="curso">
+        <br>
+        <label for="matricula" class="control-label col-sm-2">Matrícula:</label>
+        <input type="text" class="form-control" name="mactricula">
+        <br>
+        <label for="senha1" class="control-label col-sm-2">Senha:</label>
+        <input type="password" class="form-control" name="senha">
+        <br>
+
+        <input type="submit" onclick="validar()" value="Cadastrar" style="position: center">
+        <br>
+    </form>
+  </body>
+</html>
